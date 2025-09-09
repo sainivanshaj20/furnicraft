@@ -18,20 +18,28 @@
       <li><a href="#" class="hover:text-black">Storage</a></li>
     </ul>
     <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+    <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden flex-col space-y-4 px-6 py-4 bg-white shadow-md">
-    <a href="#" class="hover:text-black">Living Room</a>
-    <a href="#" class="hover:text-black">Bedroom</a>
-    <a href="#" class="hover:text-black">Dining Room</a>
-    <a href="#" class="hover:text-black">Office</a>
-    <a href="#" class="hover:text-black">Storage</a>
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden"></div>
+
+  <!-- Mobile Menu (Slide-in) -->
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <!-- Header -->
+    <div class="flex justify-between items-center px-6 py-4 border-b">
+      <h2 class="text-lg font-semibold">Menu</h2>
+      <button id="close-btn" class="text-2xl">✕</button>
+    </div>
+
+    <!-- Links -->
+    <div class="flex flex-col space-y-6 px-6 py-6 text-lg font-medium">
+      <a href="#" class="hover:text-indigo-600 transition">Living Room</a>
+      <a href="#" class="hover:text-indigo-600 transition">Bedroom</a>
+      <a href="#" class="hover:text-indigo-600 transition">Dining Room</a>
+      <a href="#" class="hover:text-indigo-600 transition">Office</a>
+      <a href="#" class="hover:text-indigo-600 transition">Storage</a>
+    </div>
   </div>
 
   <!-- Hero Section -->
@@ -450,17 +458,7 @@ class="rounded-2xl shadow-lg w-full h-[550px] object-cover">
     </div>
   </footer>
 
-
-
   <!-- JavaScript for Mobile Menu -->
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
   <script src="index.js"></script>
 </body>
 </html>
